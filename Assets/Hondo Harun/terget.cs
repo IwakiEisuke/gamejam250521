@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using Unity.VisualScripting;
@@ -7,6 +7,7 @@ using UnityEngine;
 public class terget : MonoBehaviour
 {
     [SerializeField] float saize = 0;
+    [SerializeField] int pulspoint = 0;
     void Start()
     {
 
@@ -15,7 +16,7 @@ public class terget : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //‰º•ûŒü‚É“I‚ªˆÚ“®‚µ‘±‚¯‚é
+        //ä¸‹æ–¹å‘ã«çš„ãŒç§»å‹•ã—ç¶šã‘ã‚‹
         transform.Translate(Vector3.down * Time.deltaTime);
         
         
@@ -23,20 +24,20 @@ public class terget : MonoBehaviour
     }
     public void All()
     {
-        //“I‚ªŠÔŒo‰ß‚Æ‚Æ‚à‚É¬‚³‚­‚È‚Á‚Ä‚¢‚­
+        //çš„ãŒå°ã•ããªã£ã¦ã„ã
         var getsmall = transform.transform.localScale -= Vector3.one * saize * Time.deltaTime;  
-        //“I‚Ì‘å‚«‚³iX’lj‚ªƒ[ƒˆÈ‰º‚É‚È‚é‚ÆEEEE
+        //çš„ã®å¤§ãã•ï¼ˆXå€¤ï¼‰ãŒã‚¼ãƒ­ä»¥ä¸‹ã«ãªã‚‹ã¨ãƒ»ãƒ»ãƒ»ãƒ»
         if (getsmall.x <= 0) 
         {
-            //“I‚ªÁ–Å‚·‚é‚ÆƒXƒRƒA‚ª‰ÁZ‚³‚ê‚é
-        @@GameManager.Instance.ScorePlus(10);
-            Debug.Log("ƒXƒRƒA‚ªã‚ª‚Á‚½‚æ");
-            //“I‚ÌƒXƒP[ƒ‹‚ª0ˆÈ‰º‚É‚È‚Á‚½‚çÁ–Å‚·‚é
+            //çš„ãŒæ¶ˆæ»…ã™ã‚‹ã¨ã‚¹ã‚³ã‚¢ãŒåŠ ç®—ã•ã‚Œã‚‹
+        ã€€ã€€GameManager.Instance.ScorePlus(pulspoint);
+            Debug.Log("ã‚¹ã‚³ã‚¢ãŒä¸ŠãŒã£ãŸã‚ˆ");
+            //çš„ã®ã‚¹ã‚±ãƒ¼ãƒ«ãŒ0ä»¥ä¸‹ã«ãªã£ãŸã‚‰æ¶ˆæ»…ã™ã‚‹
             Destroy(this.gameObject);
         }
-        //“I‚ªk¬‚µ‚Ä‚¢‚éŠÔƒXƒRƒA‚ª‚©‚³‚ñ‚³‚ê‚é
+        //çš„ãŒç¸®å°ã—ã¦ã„ã‚‹é–“ã‚¹ã‚³ã‚¢ãŒã‹ã•ã‚“ã•ã‚Œã‚‹
         GameManager.Instance.ScorePlus(10);
-        Debug.Log("ƒXƒRƒA");
+        Debug.Log("ã‚¹ã‚³ã‚¢ãŒ" + pulspoint + "ä¸ŠãŒã£ãŸ");
         }
 
     private void OnBecameInvisible()
