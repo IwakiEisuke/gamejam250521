@@ -32,6 +32,11 @@ public class GameManager : MonoBehaviour
     private float _intervalChecker;
 
     /// <summary>
+    /// ゲームの進行度合いの参照型
+    /// </summary>
+    public InGameState CurrentGameState => _currentGameState;
+
+    /// <summary>
     /// Scoreの参照型
     /// </summary>
     public int Score => _score;
