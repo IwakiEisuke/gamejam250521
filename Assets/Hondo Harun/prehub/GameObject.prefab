@@ -43,10 +43,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6079717924878292137}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea55baec483b19d478b1b28452e6ca2b, type: 3}
+  m_Script: {fileID: 11500000, guid: 673b3ab0ec381f042a057d38de0ace25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  saize: 5
+  saize: 0
+  pulspoint: 0
 --- !u!212 &367345658687194190
 SpriteRenderer:
   m_ObjectHideFlags: 0
