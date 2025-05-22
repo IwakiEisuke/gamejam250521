@@ -5,14 +5,14 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-    public int Score = 0;
-    public Text ScoreText;
+    //public int Score = 0;
+    //public Text ScoreText;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        UpdateScoreText();
+        //UpdateScoreText();
     }
 
     // Update is called once per frame
@@ -23,13 +23,13 @@ public class ScoreManager : MonoBehaviour
 
     public void UpdateScoreText()
     {
-        ScoreText.text = "Score:" + Score.ToString();
+        //ScoreText.text = "Score:" + GameManager.Instance.Score.ToString();
     }
 
     public void AddScore(int amount)
     {
-        Score += amount;
-        UpdateScoreText();
+        //Score += amount;
+        //UpdateScoreText();
     }
 
 }
