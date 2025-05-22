@@ -1,13 +1,13 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Gun : MonoBehaviour
 {
-    public GameObject bulletPrefab;//’eŠÛ‚ÌPrefab
-    public Transform firepoint;//”­ËˆÊ’u
-    public float bulletSpeed = 20f;//’eŠÛ‚Ì‘¬“x
-    //À•W—p‚Ì•Ï”
+    public GameObject bulletPrefab;//å¼¾ä¸¸ã®Prefab
+    public Transform firepoint;//ç™ºå°„ä½ç½®
+    public float bulletSpeed = 20f;//å¼¾ä¸¸ã®é€Ÿåº¦
+    //åº§æ¨™ç”¨ã®å¤‰æ•°
     Vector3 mousePos, worldPos;
     // Start is called before the first frame update
     void Start()
@@ -18,20 +18,23 @@ public class Gun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //ƒ}ƒEƒX‚ÌÀ•W‚Ìæ“¾
+        //ãƒã‚¦ã‚¹ã®åº§æ¨™ã®å–å¾—
         mousePos = Input.mousePosition;
-        //ƒXƒNƒŠ[ƒ“À•W‚ğƒ[ƒ‹ƒh‚É•ÏŠ·
+        //ã‚¹ã‚¯ãƒªãƒ¼ãƒ³åº§æ¨™ã‚’ãƒ¯ãƒ¼ãƒ«ãƒ‰ã«å¤‰æ›
         worldPos = Camera.main.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, 10f));
-        //ƒ[ƒ‹ƒhÀ•W‚ğ©g‚ÌÀ•W‚Éİ’è
+        //ãƒ¯ãƒ¼ãƒ«ãƒ‰åº§æ¨™ã‚’è‡ªèº«ã®åº§æ¨™ã«è¨­å®š
         transform.position = worldPos;
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButton("Fire1"))
         {
             Shoot();
         }
     }
     void Shoot()
     {
-        //’eŠÛ‚ğ¶¬
+        //å¼¾ä¸¸ã‚’ç”Ÿæˆ
         GameObject bullet = Instantiate(bulletPrefab, firepoint.position, firepoint.rotation);
+        //0.1fã”ã¨ã«æ¶ˆã™
+        Destroy(bullet, 0.1f);
     }
+    
 }
