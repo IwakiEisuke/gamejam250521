@@ -6,11 +6,7 @@ using UnityEngine;
 
 public class terget : MonoBehaviour
 {
-    //[SerializeField] string Production = ""; 
-    //生成するオブジェクト変数
-    string _terget;
-    string _terget_move;
-
+    [SerializeField] float saize = 0;
     void Start()
     {
         
@@ -21,14 +17,23 @@ public class terget : MonoBehaviour
     {
         //下方向に的が移動し続ける
         transform.Translate(Vector3.down * Time.deltaTime);
+
+    }
+    public void All()
+    {
+
         //的が時間経過とともに小さくなっていく
-        var getsmall = transform.transform.localScale -= Vector3.one * Time.deltaTime;
+        var getsmall = transform.transform.localScale -= Vector3.one * saize * Time.deltaTime;  
         //的の大きさ（X値）がゼロ以下になると・・・・
-        if (getsmall.x <= 0 );
+        if (getsmall.x <= 0) 
         {
             //的のスケールが0以下になったら消滅する
             Destroy(this.gameObject);
         }
-
+    }
+    private void OnBecameInvisible()
+    {
+        Debug.Log("destroy");
+        Destroy(this.gameObject);
     }
 }
