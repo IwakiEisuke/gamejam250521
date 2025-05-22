@@ -15,7 +15,7 @@ public class terget : MonoBehaviour
     public void All()
     {
         //的が小さくなっていく
-        var vacuum = Time.deltaTime / vacuumDuration;
+        var vacuum = Time.deltaTime / vacuumDuration; // Todo: vacuumDurationちょうどで吸引しきれるようにしたいけどなってないです
         var getSmall = transform.localScale -= Vector3.one * vacuum;
         //的の大きさ（X値）がゼロ以下になると・・・・
         if (getSmall.x <= 0)
