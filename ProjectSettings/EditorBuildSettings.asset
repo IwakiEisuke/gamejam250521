@@ -6,12 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/IsodaRyusei/Scenes/Scenes/SampleScene.unity
+    path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/reiyama/lanking.unity
-    guid: 6cea1e1d2a3525e4f9b1c0b0dbb54274
+    path: Assets/raimu/test.unity
+    guid: 4567cf48398dbb542915058ce42914b7
   - enabled: 1
-    path: Assets/reiyama/Reiyama.unity
-    guid: a4c4ce64980ec954382887b3fb8ccdcb
+    path: Assets/raimu/title.unity
+    guid: ce9d249fcdc26044e85585e94aad6d0c
   m_configObjects: {}
