@@ -6,16 +6,28 @@ public class terget : MonoBehaviour
     [SerializeField] int destroyPoint = 10;
     [SerializeField] int point = 1;
 
+    bool isHitFrame;
+
     void Update()
     {
         //下方向に的が移動し続ける
         transform.Translate(Vector3.down * Time.deltaTime);
+        isHitFrame = false;
     }
 
     public void All()
     {
+        // 1フレーム内で複数回ヒットしないように
+        if (isHitFrame)
+        {
+            Debug.Log($"isHitFrame {name}");
+            return;
+        }
+        isHitFrame = true;
+
         //的が小さくなっていく
-        var vacuum = Time.deltaTime / vacuumDuration; // Todo: vacuumDurationちょうどで吸引しきれるようにしたいけどなってないです
+        // 物理更新サイクルでは Time.deltaTime が fixedTime に置き換えられる
+        var vacuum = Time.deltaTime / vacuumDuration; 
         var getSmall = transform.localScale -= Vector3.one * vacuum;
         //的の大きさ（X値）がゼロ以下になると・・・・
         if (getSmall.x <= 0)
