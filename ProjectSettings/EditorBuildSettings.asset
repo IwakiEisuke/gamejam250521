@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/reiyama/lanking.unity
+    guid: 6cea1e1d2a3525e4f9b1c0b0dbb54274
+  - enabled: 1
+    path: Assets/reiyama/Reiyama.unity
+    guid: a4c4ce64980ec954382887b3fb8ccdcb
   m_configObjects: {}
