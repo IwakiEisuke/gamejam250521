@@ -4,17 +4,17 @@ using UnityEditor.ProjectWindowCallback;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StartUI : MonoBehaviour
+public class InGameUI : MonoBehaviour
 {
     [SerializeField, Header("リザルトのシーン名")]
     private string _sceneName;
 
-    private Text StartText;
-    private Text FinishText;
+    [SerializeField] private Text StartText;
+    [SerializeField] private Text FinishText;
     public float DisplayTime = 2f;
     private GameManager gameManager;
-    private Text TimerText;
-    private Text ScoreText;
+    [SerializeField] private Text TimerText;
+    [SerializeField] private Text ScoreText;
 
     // Start is called before the first frame update
     void Start()
