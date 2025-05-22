@@ -216,7 +216,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7094029277861116710, guid: 238d0a717bf479f4686030d5412fc3f7, type: 3}
       propertyPath: _sceneName
-      value: Result
+      value: M_Result
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -483,12 +483,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4500196003853715204, guid: ad1bea44ac74cad40ab60cbb9dd4e365, type: 3}
       propertyPath: _limitTime
-      value: 5
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 4500196003853715204, guid: ad1bea44ac74cad40ab60cbb9dd4e365, type: 3}
       propertyPath: _cameraObject
       value: 
       objectReference: {fileID: 598329284}
+    - target: {fileID: 4500196003853715204, guid: ad1bea44ac74cad40ab60cbb9dd4e365, type: 3}
+      propertyPath: _spawnInterval
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4500196003853715204, guid: ad1bea44ac74cad40ab60cbb9dd4e365, type: 3}
       propertyPath: _currentGameState
       value: 1
