@@ -32,6 +32,11 @@ public class GameManager : MonoBehaviour
     private float _intervalChecker;
 
     /// <summary>
+    /// ゲームの進行度合いの参照型
+    /// </summary>
+    public InGameState CurrentGameState => _currentGameState;
+
+    /// <summary>
     /// Scoreの参照型
     /// </summary>
     public int Score => _score;
@@ -46,8 +51,10 @@ public class GameManager : MonoBehaviour
         switch (_currentGameState)
         {
             case InGameState.Start:
-                Initialized();
-                _currentGameState = InGameState.Play;
+                if(_score != 0)
+                {
+                    Initialized();
+                }
                 break;
             case InGameState.Play:
                 _timer -= Time.deltaTime;
@@ -90,8 +97,14 @@ public class GameManager : MonoBehaviour
         Instantiate(_targetList[Random.Range(0, _targetList.Count)], spawnPos, Quaternion.identity);
     }
 
+    public void ChangeState(InGameState changeState)
+    {
+        _currentGameState = changeState;
+    }
+
     public enum InGameState
     {
+       None,
        Start,
        Play,
        Finish
