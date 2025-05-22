@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BuffItem : MonoBehaviour
 {
@@ -23,11 +24,17 @@ public class BuffItem : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.GetComponent<Bullet>()) 
+        Bullet bullet = collision.gameObject.GetComponent<Bullet>();
+
+        if (bullet != null )
         {
-            
+            GameManager scoreManager = FindObjectOfType<GameManager>();
         }
+
+        Destroy(collision.gameObject);
+        Destroy(gameObject);
     }
+    
 }
