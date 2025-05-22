@@ -14,7 +14,7 @@ public class FinishUI : MonoBehaviour
     {
         if (FinishText != null)
         {
-            FinishText.text = "START!!";
+            FinishText.text = "FINIASH!!";
             Invoke("ClearText", DisplayTime);
         }
     }
