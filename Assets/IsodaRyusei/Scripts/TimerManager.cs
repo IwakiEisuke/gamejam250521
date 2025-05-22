@@ -27,8 +27,8 @@ public class TimerManager : MonoBehaviour
         //}
     }
 
-    public void UpdateTimerText()
-    {
+    //public void UpdateTimerText()
+    //{
         //TimerText.text = GameManager.Instance.Timer.ToString();
-    }
+    //}
 }

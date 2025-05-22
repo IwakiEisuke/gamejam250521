@@ -21,15 +21,15 @@ public class ScoreManager : MonoBehaviour
         
     }
 
-    public void UpdateScoreText()
-    {
+    //public void UpdateScoreText()
+    //{
         //ScoreText.text = "Score:" + GameManager.Instance.Score.ToString();
-    }
+    //}
 
-    public void AddScore(int amount)
-    {
+    //public void AddScore(int amount)
+    //{
         //Score += amount;
         //UpdateScoreText();
-    }
+    //}
 
 }
