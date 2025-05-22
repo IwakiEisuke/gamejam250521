@@ -16,7 +16,7 @@ public class JsonRanking : MonoBehaviour
     {
         filePath = Path.Combine(Application.persistentDataPath, "ranking.json");
 
-        int newScore = 1200; // 追加するスコア
+        int newScore = ; // 追加するスコア
         SaveScore(newScore);
         ShowRanking();
     }
@@ -29,8 +29,8 @@ public class JsonRanking : MonoBehaviour
         data.scores.Sort((a, b) => b.CompareTo(a)); // 降順ソート
 
         // 上位3つに制限
-        if (data.scores.Count > 3)
-            data.scores = data.scores.GetRange(0, 3);
+        if (data.scores.Count > 30)
+            data.scores = data.scores.GetRange(0, 30);
 
         string json = JsonUtility.ToJson(data, true);
         File.WriteAllText(filePath, json);
