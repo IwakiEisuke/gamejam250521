@@ -29,7 +29,7 @@ public class InGameUI : MonoBehaviour
         {
             case GameManager.InGameState.Start:
                 StartText.text = "START!!";
-                Invoke("ClearText", DisplayTime);
+                Invoke(nameof(StartToPlay), DisplayTime);
                 break;
             case GameManager.InGameState.Play:
                 TimerText.text = gameManager.Timer.ToString();
@@ -37,27 +37,29 @@ public class InGameUI : MonoBehaviour
                 break;
             case GameManager.InGameState.Finish:
                 FinishText.text = "Finish!!";
-                Invoke("ClearText", DisplayTime);
+                TimerText.text = "0";
+                Invoke(nameof(FinishToResult), DisplayTime);
                 break;
 
 
         }
     }
 
-
-
-    public void ClearText()
+    public void StartToPlay()
     {
         if (StartText != null)
         {
             StartText.text = "";
-            gameManager.ChangeState(GameManager.InGameState.Play);
         }
+        gameManager.ChangeState(GameManager.InGameState.Play);
+    }
 
+    public void FinishToResult()
+    {
         if (FinishText != null)
         {
             FinishText.text = "";
-            SceneController.Instance.ChangeScene(_sceneName);
         }
+        SceneController.Instance.ChangeScene(_sceneName);
     }
 }
