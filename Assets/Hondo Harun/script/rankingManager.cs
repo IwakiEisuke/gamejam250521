@@ -1,4 +1,4 @@
-using System.Collections;
+/*using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -10,11 +10,11 @@ public class ranking : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        int newscore =1;/*playerのスコアを変数として代入*/
+        int newscore =;/*playerのスコアを変数として代入*/
 
-        Addscore(newscore);
+       /* Addscore(newscore); //スコアをランキングに挿入
 
-        showranking();
+        showranking();//ランキングを表示
     }
 
     // Update is called once per frame
@@ -23,18 +23,19 @@ public class ranking : MonoBehaviour
         
     }
 
-    void Addscore(int score)
+    void Addscore(int score)　//スコアをランキングに挿入
     {
-        scores.Clear();
+        scores.Clear();  //スコアクリア
         for (int i = 0; i < Maxcount; i++) 
-        {
+        {　　　　　　　　　　　　　　　　　　　　　　//playerprefs からランキングを読み込む
             if (PlayerPrefs.HasKey("score" + i))
             {
                 scores.Add(PlayerPrefs.GetInt("score" + i));
             }
         }
+        //あたらしいすこあをいれる
         scores.Add(score);
-
+        //スコアで順位別に降順にする
         scores.Sort((a, b) => b.CompareTo(a));
 
         for (int i = 0; i < Mathf.Min(Maxcount,  scores.Count); i++) 
@@ -59,5 +60,5 @@ public class ranking : MonoBehaviour
             }
         }
     }
-}
+}*/
 

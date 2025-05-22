@@ -196,6 +196,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameObject (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7233934100855066565, guid: 57f767e4e6c3000429ad86d34cd8a0ea, type: 3}
+      propertyPath: saize
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7233934100855066565, guid: 57f767e4e6c3000429ad86d34cd8a0ea, type: 3}
+      propertyPath: pulspoint
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -269,6 +277,14 @@ PrefabInstance:
     - target: {fileID: 6079717924878292137, guid: 57f767e4e6c3000429ad86d34cd8a0ea, type: 3}
       propertyPath: m_Name
       value: GameObject (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7233934100855066565, guid: 57f767e4e6c3000429ad86d34cd8a0ea, type: 3}
+      propertyPath: saize
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7233934100855066565, guid: 57f767e4e6c3000429ad86d34cd8a0ea, type: 3}
+      propertyPath: pulspoint
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -351,7 +367,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7233934100855066565, guid: 57f767e4e6c3000429ad86d34cd8a0ea, type: 3}
       propertyPath: saize
-      value: 0.5
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7233934100855066565, guid: 57f767e4e6c3000429ad86d34cd8a0ea, type: 3}
+      propertyPath: pulspoint
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -422,6 +442,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameObject (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 7233934100855066565, guid: 57f767e4e6c3000429ad86d34cd8a0ea, type: 3}
+      propertyPath: saize
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7233934100855066565, guid: 57f767e4e6c3000429ad86d34cd8a0ea, type: 3}
+      propertyPath: pulspoint
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -490,6 +518,14 @@ PrefabInstance:
     - target: {fileID: 6079717924878292137, guid: 57f767e4e6c3000429ad86d34cd8a0ea, type: 3}
       propertyPath: m_Name
       value: GameObject (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7233934100855066565, guid: 57f767e4e6c3000429ad86d34cd8a0ea, type: 3}
+      propertyPath: saize
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7233934100855066565, guid: 57f767e4e6c3000429ad86d34cd8a0ea, type: 3}
+      propertyPath: pulspoint
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -564,6 +600,14 @@ PrefabInstance:
     - target: {fileID: 6079717924878292137, guid: 57f767e4e6c3000429ad86d34cd8a0ea, type: 3}
       propertyPath: m_Name
       value: GameObject (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7233934100855066565, guid: 57f767e4e6c3000429ad86d34cd8a0ea, type: 3}
+      propertyPath: saize
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7233934100855066565, guid: 57f767e4e6c3000429ad86d34cd8a0ea, type: 3}
+      propertyPath: pulspoint
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -681,6 +725,14 @@ PrefabInstance:
     - target: {fileID: 6079717924878292137, guid: 57f767e4e6c3000429ad86d34cd8a0ea, type: 3}
       propertyPath: m_Name
       value: GameObject (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7233934100855066565, guid: 57f767e4e6c3000429ad86d34cd8a0ea, type: 3}
+      propertyPath: saize
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7233934100855066565, guid: 57f767e4e6c3000429ad86d34cd8a0ea, type: 3}
+      propertyPath: pulspoint
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -852,6 +904,14 @@ PrefabInstance:
     - target: {fileID: 6079717924878292137, guid: 57f767e4e6c3000429ad86d34cd8a0ea, type: 3}
       propertyPath: m_Name
       value: GameObject (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7233934100855066565, guid: 57f767e4e6c3000429ad86d34cd8a0ea, type: 3}
+      propertyPath: saize
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7233934100855066565, guid: 57f767e4e6c3000429ad86d34cd8a0ea, type: 3}
+      propertyPath: pulspoint
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1038,6 +1098,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameObject (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 7233934100855066565, guid: 57f767e4e6c3000429ad86d34cd8a0ea, type: 3}
+      propertyPath: saize
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7233934100855066565, guid: 57f767e4e6c3000429ad86d34cd8a0ea, type: 3}
+      propertyPath: pulspoint
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1117,6 +1185,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameObject (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 7233934100855066565, guid: 57f767e4e6c3000429ad86d34cd8a0ea, type: 3}
+      propertyPath: saize
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7233934100855066565, guid: 57f767e4e6c3000429ad86d34cd8a0ea, type: 3}
+      propertyPath: pulspoint
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1173,6 +1249,14 @@ PrefabInstance:
     - target: {fileID: 6079717924878292137, guid: 57f767e4e6c3000429ad86d34cd8a0ea, type: 3}
       propertyPath: m_Name
       value: GameObject (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7233934100855066565, guid: 57f767e4e6c3000429ad86d34cd8a0ea, type: 3}
+      propertyPath: saize
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7233934100855066565, guid: 57f767e4e6c3000429ad86d34cd8a0ea, type: 3}
+      propertyPath: pulspoint
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
