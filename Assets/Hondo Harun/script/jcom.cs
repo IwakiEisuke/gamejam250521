@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+ï»¿using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
@@ -16,7 +16,7 @@ public class JsonRanking : MonoBehaviour
     {
         filePath = Path.Combine(Application.persistentDataPath, "ranking.json");
 
-        int newScore = 1200; // ’Ç‰Á‚·‚éƒXƒRƒA
+        int newScore = 1200; // è¿½åŠ ã™ã‚‹ã‚¹ã‚³ã‚¢
         SaveScore(newScore);
         ShowRanking();
     }
@@ -26,9 +26,9 @@ public class JsonRanking : MonoBehaviour
         ScoreData data = LoadScores();
 
         data.scores.Add(newScore);
-        data.scores.Sort((a, b) => b.CompareTo(a)); // ~‡ƒ\[ƒg
+        data.scores.Sort((a, b) => b.CompareTo(a)); // é™é †ã‚½ãƒ¼ãƒˆ
 
-        // ãˆÊ3‚Â‚É§ŒÀ
+        // ä¸Šä½3ã¤ã«åˆ¶é™
         if (data.scores.Count > 3)
             data.scores = data.scores.GetRange(0, 3);
 
@@ -51,7 +51,7 @@ public class JsonRanking : MonoBehaviour
     {
         ScoreData data = LoadScores();
 
-        Debug.Log("=== ƒ‰ƒ“ƒLƒ“ƒO ===");
+        Debug.Log("=== ãƒ©ãƒ³ã‚­ãƒ³ã‚° ===");
         for (int i = 0; i < data.scores.Count; i++)
         {
             Debug.Log("Rank " + (i + 1) + ": " + data.scores[i]);
