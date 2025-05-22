@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        ////“I‚É“–‚½‚Á‚½‚©Šm”F
-        //TargetShrink target = collision.gameObject.GetComponent<TargetShrink>();
-        //if (target != null)
-        //{
-        //    //“I‚ğLk
-        //    target.Shrink();
-        //}
-        ////’eŠÛ‚ğíœ
-        //Destroy(gameObject);
+        //“I‚É“–‚½‚Á‚½‚©Šm”F
+        terget target = collision.gameObject.GetComponent<terget>();
+        if (target != null)
+        {
+            //“I‚ğLk
+            target.All();
+        }
+        //’eŠÛ‚ğíœ
+        Destroy(gameObject);
     }
+
     // Start is called before the first frame update
     void Start()
     {
