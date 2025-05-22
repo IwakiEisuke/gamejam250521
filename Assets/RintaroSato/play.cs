@@ -18,7 +18,7 @@ public class play : MonoBehaviour
     void Update()
     {
         //マウスの左クリックで撃つ
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButton("Fire1"))
         {
             Shot();
         }

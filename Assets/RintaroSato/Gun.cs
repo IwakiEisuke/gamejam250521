@@ -34,7 +34,7 @@ public class Gun : MonoBehaviour
         //弾丸を生成
         GameObject bullet = Instantiate(bulletPrefab, firepoint.position, firepoint.rotation);
         //0.1fごとに消す
-        Destroy(gameObject, 0.1f);
+        Destroy(bullet, 0.1f);
     }
     
 }
