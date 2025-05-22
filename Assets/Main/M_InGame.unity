@@ -268,7 +268,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 2413664257283052917, guid: 4ca3e6a85d280da4eb53deaab586057f, type: 3}
   firepoint: {fileID: 471397795}
-  bulletSpeed: 20
 --- !u!4 &471397795
 Transform:
   m_ObjectHideFlags: 0
@@ -491,7 +490,7 @@ PrefabInstance:
       objectReference: {fileID: 598329284}
     - target: {fileID: 4500196003853715204, guid: ad1bea44ac74cad40ab60cbb9dd4e365, type: 3}
       propertyPath: _spawnInterval
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4500196003853715204, guid: ad1bea44ac74cad40ab60cbb9dd4e365, type: 3}
       propertyPath: _currentGameState
