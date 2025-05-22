@@ -33,10 +33,5 @@ public class Gun : MonoBehaviour
     {
         //íeä€Çê∂ê¨
         GameObject bullet = Instantiate(bulletPrefab, firepoint.position, firepoint.rotation);
-        //íeä€Ç…óÕÇâ¡Ç¶ÇÈ
-        Rigidbody rb = bullet.GetComponent<Rigidbody>();
-        rb.velocity = firepoint.forward * bulletSpeed;
     }
-
-
 }
