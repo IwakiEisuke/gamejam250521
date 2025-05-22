@@ -31,6 +31,13 @@ public class GameManager : MonoBehaviour
 
     private float _intervalChecker;
 
+    private bool _onEvent;
+
+    /// <summary>
+    /// イベントが始まっているかどうかの判定
+    /// </summary>
+    public bool OnEvent => _onEvent;
+
     /// <summary>
     /// ゲームの進行度合いの参照型
     /// </summary>
@@ -51,10 +58,7 @@ public class GameManager : MonoBehaviour
         switch (_currentGameState)
         {
             case InGameState.Start:
-                if(_score != 0)
-                {
-                    Initialized();
-                }
+                Initialized();
                 break;
             case InGameState.Play:
                 _timer -= Time.deltaTime;
@@ -67,13 +71,18 @@ public class GameManager : MonoBehaviour
                 if (_timer <= 0)
                 {
                     _currentGameState = InGameState.Finish;
+                    if(OnEvent == true)
+                    {
+                        _onEvent = false;
+                    }
                 }
                 break;
             case InGameState.Finish:
                 Debug.Log("終了");
                 break;
-
         }
+
+
     }
 
     /// <summary>
@@ -100,6 +109,11 @@ public class GameManager : MonoBehaviour
     public void ChangeState(InGameState changeState)
     {
         _currentGameState = changeState;
+    }
+
+    public void EventStart(float eventTime)
+    {
+        _onEvent = true;
     }
 
     public enum InGameState
