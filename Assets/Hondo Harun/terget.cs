@@ -17,7 +17,7 @@ public class terget : MonoBehaviour
     {
         //‰º•ûŒü‚É“I‚ªˆÚ“®‚µ‘±‚¯‚é
         transform.Translate(Vector3.down * Time.deltaTime);
-        All();
+        
         
 
     }
