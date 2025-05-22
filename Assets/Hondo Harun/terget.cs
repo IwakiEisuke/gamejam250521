@@ -12,6 +12,10 @@ public class terget : MonoBehaviour
     {
         //下方向に的が移動し続ける
         transform.Translate(Vector3.down * Time.deltaTime);
+    }
+
+    private void FixedUpdate()
+    {
         isHitFrame = false;
     }
 
