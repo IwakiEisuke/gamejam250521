@@ -1,10 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 
 public class terget : MonoBehaviour
 {
-    // Start is called before the first frame update
+    //[SerializeField] string Production = ""; 
+    //生成するオブジェクト変数
+    string _terget_move;
+
     void Start()
     {
         
@@ -12,7 +16,7 @@ public class terget : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        
+    {        transform.Translate(Vector3.down * Time.deltaTime);
+
     }
 }
