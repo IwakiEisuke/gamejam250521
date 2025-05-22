@@ -106,6 +106,12 @@ public class GameManager : MonoBehaviour
         _currentGameState = changeState;
     }
 
+    public void AddTime(float time)
+    {
+        _timer += time;
+        _intervalChecker += time;
+    }
+
     public enum InGameState
     {
        None,
