@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
     /// <summary>
     ///シングルトン化
     /// </summary>
-    static GameManager _instance = new GameManager();
+    private static GameManager _instance;
     public static GameManager Instance => _instance;
 
     [SerializeField,Header("Score")]
@@ -53,13 +53,16 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public float Timer => _timer;
 
+    private void Awake()
+    {
+        _instance = this;
+        Initialized();
+    }
+
     private void Update()
     {
         switch (_currentGameState)
         {
-            case InGameState.Start:
-                Initialized();
-                break;
             case InGameState.Play:
                 _timer -= Time.deltaTime;
                 if(_spawnInterval <= _intervalChecker - _timer)
@@ -70,19 +73,11 @@ public class GameManager : MonoBehaviour
 
                 if (_timer <= 0)
                 {
+                    
                     _currentGameState = InGameState.Finish;
-                    if(OnEvent == true)
-                    {
-                        _onEvent = false;
-                    }
                 }
                 break;
-            case InGameState.Finish:
-                Debug.Log("終了");
-                break;
         }
-
-
     }
 
     /// <summary>
@@ -109,11 +104,6 @@ public class GameManager : MonoBehaviour
     public void ChangeState(InGameState changeState)
     {
         _currentGameState = changeState;
-    }
-
-    public void EventStart(float eventTime)
-    {
-        _onEvent = true;
     }
 
     public enum InGameState
