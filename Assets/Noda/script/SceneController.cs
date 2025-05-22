@@ -21,7 +21,6 @@ public class SceneController : MonoBehaviour
         }
 
         _instance = this;
-        DontDestroyOnLoad(gameObject);
     }
 
     public void ChangeScene(string sceneName)
