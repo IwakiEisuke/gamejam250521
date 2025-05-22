@@ -9,7 +9,7 @@ public class terget : MonoBehaviour
     [SerializeField] float saize = 0;
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -31,9 +31,11 @@ public class terget : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
     private void OnBecameInvisible()
     {
         Debug.Log("destroy");
         Destroy(this.gameObject);
+        GameManager.Instance.ScorePlus(10);
     }
 }
