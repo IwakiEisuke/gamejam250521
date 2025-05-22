@@ -1,29 +1,29 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class play : MonoBehaviour
 {
-    //ƒJ[ƒ\ƒ‹‚Ég—p‚·‚éƒeƒNƒXƒ`ƒƒ
+    //ã‚«ãƒ¼ã‚½ãƒ«ã«ä½¿ç”¨ã™ã‚‹ãƒ†ã‚¯ã‚¹ãƒãƒ£
     [SerializeField]
     private Texture2D cursor;
     // Start is called before the first frame update
     void Start()
     {
-        //ƒJ[ƒ\ƒ‹‚ğ©‘O‚ÌƒJ[ƒ\ƒ‹‚É•ÏX
+        //ã‚«ãƒ¼ã‚½ãƒ«ã‚’è‡ªå‰ã®ã‚«ãƒ¼ã‚½ãƒ«ã«å¤‰æ›´
         Cursor.SetCursor(cursor, new Vector2(cursor.width / 2, cursor.height / 2), CursorMode.ForceSoftware);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //ƒ}ƒEƒX‚Ì¶ƒNƒŠƒbƒN‚ÅŒ‚‚Â
+        //ãƒã‚¦ã‚¹ã®å·¦ã‚¯ãƒªãƒƒã‚¯ã§æ’ƒã¤
         if (Input.GetButtonDown("Fire1"))
         {
             Shot();
         }
     }
-    //“G‚ğŒ‚‚Â
+    //æ•µã‚’æ’ƒã¤
     void Shot()
     {
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
