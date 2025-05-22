@@ -6,17 +6,11 @@ public class Gun : MonoBehaviour
 {
     public GameObject bulletPrefab;//弾丸のPrefab
     public Transform firepoint;//発射位置
-    public float bulletSpeed = 20f;//弾丸の速度
     //座標用の変数
     Vector3 mousePos, worldPos;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    // Bulletの衝突は物理更新サイクルで行われるためFixedUpdate内で生成しないとおかしくなる
+    void FixedUpdate()
     {
         //マウスの座標の取得
         mousePos = Input.mousePosition;
@@ -29,12 +23,10 @@ public class Gun : MonoBehaviour
             Shoot();
         }
     }
+
     void Shoot()
     {
         //弾丸を生成
-        GameObject bullet = Instantiate(bulletPrefab, firepoint.position, firepoint.rotation);
-        //0.1fごとに消す
-        Destroy(bullet, 0.1f);
+        Instantiate(bulletPrefab, firepoint.position, firepoint.rotation);
     }
-    
 }
