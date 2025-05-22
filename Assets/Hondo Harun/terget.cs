@@ -18,6 +18,7 @@ public class terget : MonoBehaviour
         //下方向に的が移動し続ける
         transform.Translate(Vector3.down * Time.deltaTime);
         All();
+        
 
     }
     public void All()
@@ -27,11 +28,13 @@ public class terget : MonoBehaviour
         //的の大きさ（X値）がゼロ以下になると・・・・
         if (getsmall.x <= 0) 
         {
+            //的が消滅するとスコアが加算される
         　　GameManager.Instance.ScorePlus(10);
             Debug.Log("スコアが上がったよ");
             //的のスケールが0以下になったら消滅する
             Destroy(this.gameObject);
         }
+        //的が縮小している間スコアがかさんされる
         GameManager.Instance.ScorePlus(10);
         Debug.Log("スコア");
         }
