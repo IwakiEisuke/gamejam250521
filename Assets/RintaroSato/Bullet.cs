@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,26 +6,18 @@ public class Bullet : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        //“I‚É“–‚½‚Á‚½‚©Šm”F
+        //çš„ã«å½“ãŸã£ãŸã‹ç¢ºèª
         terget target = collision.gameObject.GetComponent<terget>();
         if (target != null)
         {
-            //“I‚ğLk
+            //çš„ã‚’ä¼¸ç¸®
             target.All();
         }
-        //’eŠÛ‚ğíœ
-        Destroy(gameObject);
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Destroy(gameObject);
     }
 }

@@ -5,13 +5,37 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/raimu/test.unity
+    guid: 4567cf48398dbb542915058ce42914b7
+  - enabled: 1
+    path: Assets/raimu/title.unity
+    guid: ce9d249fcdc26044e85585e94aad6d0c
+  - enabled: 1
+    path: Assets/IsodaRyusei/Scenes/Scenes/IsodaRyusei.unity
+    guid: 4feeb226f919cca49b38a0b221904b71
   - enabled: 1
     path: Assets/reiyama/lanking.unity
     guid: 6cea1e1d2a3525e4f9b1c0b0dbb54274
   - enabled: 1
     path: Assets/reiyama/Reiyama.unity
     guid: a4c4ce64980ec954382887b3fb8ccdcb
+  - enabled: 1
+    path: Assets/Main/M_InGame.unity
+    guid: 1d7b5d1324f03c84bab83cf29980f9ce
+  - enabled: 1
+    path: Assets/Main/M_Ranking.unity
+    guid: fd2c8b1c0282eea4795d60b9d78b59e6
+  - enabled: 1
+    path: Assets/Main/M_Result.unity
+    guid: 240cb2fccda83f94cbb3806455a12383
+  - enabled: 1
+    path: Assets/Main/M_Title.unity
+    guid: a36d5e49244485947b44a6733235ae1b
+  - enabled: 1
+    path: Assets/Main/M_Option.unity
+    guid: 4f4661bef86893c43bbb7d1b66a99a8f
   m_configObjects: {}

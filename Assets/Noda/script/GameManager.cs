@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
     /// <summary>
     ///シングルトン化
     /// </summary>
-    static GameManager _instance = new GameManager();
+    private static GameManager _instance;
     public static GameManager Instance => _instance;
 
     [SerializeField,Header("Score")]
@@ -27,9 +27,22 @@ public class GameManager : MonoBehaviour
     [SerializeField, Header("的の生成間隔")]
     private float _spawnInterval = 3f;
 
+    [SerializeField, Header("Scoreの増加倍率")]
+    private int _scoreBuffMagnification = 1;
+
+    [SerializeField, Header("BuffObject")]
+    private GameObject _buffObject;
+
     private float _timer;
 
     private float _intervalChecker;
+
+    private bool _onEvent;
+
+    /// <summary>
+    /// イベントが始まっているかどうかの判定
+    /// </summary>
+    public bool OnEvent => _onEvent;
 
     /// <summary>
     /// ゲームの進行度合いの参照型
@@ -46,16 +59,16 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public float Timer => _timer;
 
+    private void Awake()
+    {
+        _instance = this;
+        Initialized();
+    }
+
     private void Update()
     {
         switch (_currentGameState)
         {
-            case InGameState.Start:
-                if(_score != 0)
-                {
-                    Initialized();
-                }
-                break;
             case InGameState.Play:
                 _timer -= Time.deltaTime;
                 if(_spawnInterval <= _intervalChecker - _timer)
@@ -66,14 +79,13 @@ public class GameManager : MonoBehaviour
 
                 if (_timer <= 0)
                 {
+                    
                     _currentGameState = InGameState.Finish;
                 }
                 break;
-            case InGameState.Finish:
-                Debug.Log("終了");
-                break;
-
         }
+
+
     }
 
     /// <summary>
@@ -86,9 +98,21 @@ public class GameManager : MonoBehaviour
         _intervalChecker = _limitTime;
     }
 
+    public void Effect(float time, int buffEffectNum)
+    {
+        GameObject effectObj = Instantiate(_buffObject,transform);
+        BuffEffect buffEffect = effectObj.GetComponent<BuffEffect>();
+        buffEffect.StartBuffEffect(time, buffEffectNum);
+    }
+
+    public void BuffMagnificationPlus(int addMagnification)
+    {
+        _scoreBuffMagnification += addMagnification;
+    }
+
     public void ScorePlus(int plusScore)
     {
-        _score += plusScore;
+        _score = _score + (plusScore * _scoreBuffMagnification);
     }
 
     public void RandomSpawnTarget(float maxSpawnAreaX, float maxSpawnAreaY)
@@ -100,6 +124,12 @@ public class GameManager : MonoBehaviour
     public void ChangeState(InGameState changeState)
     {
         _currentGameState = changeState;
+    }
+
+    public void AddTime(float time)
+    {
+        _timer += time;
+        _intervalChecker += time;
     }
 
     public enum InGameState
