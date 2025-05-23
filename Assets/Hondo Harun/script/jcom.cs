@@ -16,7 +16,7 @@ public class JsonRanking : MonoBehaviour
     {
         filePath = Path.Combine(Application.persistentDataPath, "ranking.json");
 
-        int newScore = ; // 追加するスコア
+        int newScore = 1; // 追加するスコア
         SaveScore(newScore);
         ShowRanking();
     }
