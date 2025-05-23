@@ -13,19 +13,11 @@ public class Bullet : MonoBehaviour
             //的を伸縮
             target.All();
         }
-        //弾丸を削除
-        Destroy(gameObject);
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        Destroy(gameObject);
     }
 }

@@ -46,8 +46,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 673b3ab0ec381f042a057d38de0ace25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  saize: 0
-  pulspoint: 0
+  vacuumDuration: 2.5
+  destroyPoint: 100
+  point: 1
 --- !u!212 &367345658687194190
 SpriteRenderer:
   m_ObjectHideFlags: 0

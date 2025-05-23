@@ -1,44 +1,51 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using Unity.VisualScripting;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class terget : MonoBehaviour
 {
-    [SerializeField] float saize = 0;
-    [SerializeField] int pulspoint = 0;
-    void Start()
-    {
+    [SerializeField] float vacuumDuration = 1;
+    [SerializeField] int destroyPoint = 10;
+    [SerializeField] int point = 1;
 
-    }
+    bool isHitFrame;
 
-    // Update is called once per frame
     void Update()
     {
         //下方向に的が移動し続ける
         transform.Translate(Vector3.down * Time.deltaTime);
-        
-        
-
     }
+
+    private void FixedUpdate()
+    {
+        isHitFrame = false;
+    }
+
     public void All()
     {
+        // 1フレーム内で複数回ヒットしないように
+        if (isHitFrame)
+        {
+            Debug.Log($"isHitFrame {name}");
+            return;
+        }
+        isHitFrame = true;
+
         //的が小さくなっていく
-        var getsmall = transform.transform.localScale -= Vector3.one * saize * Time.deltaTime;  
+        // 物理更新サイクルでは Time.deltaTime が fixedTime に置き換えられる
+        var vacuum = Time.deltaTime / vacuumDuration; 
+        var getSmall = transform.localScale -= Vector3.one * vacuum;
         //的の大きさ（X値）がゼロ以下になると・・・・
-        if (getsmall.x <= 0) 
+        if (getSmall.x <= 0)
         {
             //的が消滅するとスコアが加算される
-        　　GameManager.Instance.ScorePlus(pulspoint);
-            Debug.Log("スコアが上がったよ");
+            GameManager.Instance.ScorePlus(destroyPoint);
+            Debug.Log("スコアが" + destroyPoint + "上がった");
             //的のスケールが0以下になったら消滅する
             Destroy(this.gameObject);
         }
         //的が縮小している間スコアがかさんされる
-        GameManager.Instance.ScorePlus(10);
-        Debug.Log("スコアが" + pulspoint + "上がった");
-        }
+        GameManager.Instance.ScorePlus(point);
+        Debug.Log("スコアが" + point + "上がった");
+    }
 
     private void OnBecameInvisible()
     {
