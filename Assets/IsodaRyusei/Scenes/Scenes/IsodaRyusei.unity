@@ -380,6 +380,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuffItem
       objectReference: {fileID: 0}
+    - target: {fileID: 288862427610088371, guid: 8ae85d03ab1ff1544af8a7a724c8bff2, type: 3}
+      propertyPath: m_TagString
+      value: Buff
+      objectReference: {fileID: 0}
     - target: {fileID: 3873487137920047199, guid: 8ae85d03ab1ff1544af8a7a724c8bff2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 428.8184
