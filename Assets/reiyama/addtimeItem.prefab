@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2778176342331507705}
   - component: {fileID: 1299238476824953764}
   - component: {fileID: 573798151711039212}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: addtimeItem
   m_TagString: Clock
   m_Icon: {fileID: 0}
@@ -126,7 +126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 839e2fa3a08bd0043af4b83eadd30dd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnTime: 3
+  _spawnTime: 1
+  addTime: 3
   _clip: {fileID: 8300000, guid: f16a7e3e9b3c42a4d8c36b09586c7a59, type: 3}
 --- !u!58 &573798151711039212
 CircleCollider2D:
