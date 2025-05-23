@@ -29,6 +29,12 @@ public class GameManager : MonoBehaviour
     [SerializeField, Header("的の生成間隔")]
     private float _spawnInterval = 3f;
 
+    [SerializeField, Header("Scoreの増加倍率")]
+    private int _scoreBuffMagnification = 1;
+
+    [SerializeField, Header("BuffObject")]
+    private GameObject _buffObject;
+
     private float _timer;
 
     private float _intervalChecker;
@@ -80,6 +86,8 @@ public class GameManager : MonoBehaviour
                 }
                 break;
         }
+
+
     }
 
     /// <summary>
@@ -92,9 +100,21 @@ public class GameManager : MonoBehaviour
         _intervalChecker = _limitTime;
     }
 
+    public void Effect(float time, int buffEffectNum)
+    {
+        GameObject effectObj = Instantiate(_buffObject,transform);
+        BuffEffect buffEffect = effectObj.GetComponent<BuffEffect>();
+        buffEffect.StartBuffEffect(time, buffEffectNum);
+    }
+
+    public void BuffMagnificationPlus(int addMagnification)
+    {
+        _scoreBuffMagnification += addMagnification;
+    }
+
     public void ScorePlus(int plusScore)
     {
-        _score += plusScore;
+        _score = _score + (plusScore * _scoreBuffMagnification);
     }
 
     public void RandomSpawnTarget(float maxSpawnAreaX, float maxSpawnAreaY)
