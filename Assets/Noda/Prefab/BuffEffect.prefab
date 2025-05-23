@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7174880126991080867
+--- !u!1 &5030622765117525879
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,47 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2738076882007999256}
-  - component: {fileID: 4500196003853715204}
+  - component: {fileID: 1854378695155871296}
+  - component: {fileID: 7827257967463289394}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: BuffEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2738076882007999256
+--- !u!4 &1854378695155871296
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7174880126991080867}
+  m_GameObject: {fileID: 5030622765117525879}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 13.432693, y: 8.671789, z: -0.053160507}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4500196003853715204
+--- !u!114 &7827257967463289394
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7174880126991080867}
+  m_GameObject: {fileID: 5030622765117525879}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef802c5ce9813b14cba2022c8473d68e, type: 3}
+  m_Script: {fileID: 11500000, guid: d3eb52aab4773d04bb52361f246a964f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _score: 0
-  _limitTime: 30
-  _currentGameState: 0
-  _targetList: []
-  _cameraObject: {fileID: 0}
-  _spawnInterval: 3
-  _scoreBuffMagnification: 1
-  _buffObject: {fileID: 5030622765117525879, guid: 91884df9dd00d3b499392c3b93c2c0a1, type: 3}
