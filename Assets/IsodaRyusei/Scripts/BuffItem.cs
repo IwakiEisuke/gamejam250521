@@ -7,10 +7,6 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class BuffItem : MonoBehaviour
 {
-    [SerializeField, Header("スコアの倍率")]
-    public int buffEffectNum;
-    [SerializeField, Header("バフの継続時間")]
-    public float time;
     [SerializeField, Header("効果時間")]
     private float _effectTime;
     [SerializeField, Header("効果倍率")]
