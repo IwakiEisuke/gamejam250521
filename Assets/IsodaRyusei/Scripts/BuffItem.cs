@@ -7,25 +7,28 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class BuffItem : MonoBehaviour
 {
-    [SerializeField, Header("スコアの加算値")]
-    private int BonusScore = 0;
-    [SerializeField,Header("バフの継続時間")]
-    private float BuffTime;
+    [SerializeField, Header("スコアの倍率")]
+    public int buffEffectNum;
+    [SerializeField, Header("バフの継続時間")]
+    public float time;
+    [SerializeField, Header("効果時間")]
+    private float _effectTime;
+    [SerializeField, Header("効果倍率")]
+    private int _effect;
 
     private void OnCollisionEnter(Collision collision)
     {
         Bullet bullet = collision.gameObject.GetComponent<Bullet>();
         if (bullet != null)
         {
-            GameManager gm = FindObjectOfType<GameManager>();
-            if (gm != null)
+            if (GameManager.Instance != null)
             {
-                
+                GameManager.Instance.Effect(_effectTime,_effect);
             }
+
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
         }
-        
-        Destroy(collision.gameObject);
-        Destroy(gameObject);
     }
     
 }
