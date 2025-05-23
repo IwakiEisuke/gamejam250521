@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,6 +16,11 @@ public class RankingCrass : MonoBehaviour
     void Start()
     {
         data = GetComponent<DataManager>().data;
+
+        var rank = data.rank;
+        rank.Concat(new int[1] { GameManager.Instance.Score });
+        Array.Sort(ranktexts);
+        rank.AsSpan(0, rankcnt).ToArray();
 
         for (int i = 0; i < rankcnt; i++)
         {
@@ -38,8 +45,8 @@ public class RankingCrass : MonoBehaviour
 
     public void SetRank()
     {
-        InputField inpfil = GameObject.Find("InputField").GetComponent<InputField>();
-        int score = int.Parse(inpfil.text);
+        //InputField inpfil = GameObject.Find("InputField").GetComponent<InputField>();
+        int score = GameManager.Instance.Score;
         
 
 

@@ -5,6 +5,6 @@ using UnityEngine;
 
 public class SaveData
 {
-    public const int rankCnt = 3;
+    public const int rankCnt = 15;
     public int[] rank = new int[rankCnt];
 }
