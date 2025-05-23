@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class ScoreData
 {
-    public List<int> scores = new List<int>();
+    public List<int> scores = new List<int>(); //このリストの中にスコアを保存する
 }
 
 public class JsonRanking : MonoBehaviour
