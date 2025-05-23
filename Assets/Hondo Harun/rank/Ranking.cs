@@ -5,7 +5,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class RankingCrass : MonoBehaviour
+public class Ranking : MonoBehaviour
 {
     string[]    rankName = { "1st", "2nd", "3rd" };
     const int   rankcnt = SaveData.rankCnt;
