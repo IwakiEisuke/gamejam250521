@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.ProjectWindowCallback;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class InGameUI : MonoBehaviour
@@ -32,7 +29,7 @@ public class InGameUI : MonoBehaviour
                 Invoke(nameof(StartToPlay), DisplayTime);
                 break;
             case GameManager.InGameState.Play:
-                TimerText.text = gameManager.Timer.ToString();
+                TimerText.text = gameManager.Timer.ToString("F2");
                 ScoreText.text = "Score:" + gameManager.Score.ToString();
                 break;
             case GameManager.InGameState.Finish:
