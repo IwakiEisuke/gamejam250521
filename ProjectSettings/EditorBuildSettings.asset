@@ -38,4 +38,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Main/M_Option.unity
     guid: 4f4661bef86893c43bbb7d1b66a99a8f
+  - enabled: 1
+    path: Assets/raimu/aaaaa.unity
+    guid: 8cc4d14543c771f45935725470f9959c
   m_configObjects: {}
