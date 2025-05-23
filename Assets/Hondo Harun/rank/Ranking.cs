@@ -23,8 +23,47 @@ public class RankingCrass : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        DispRank();
+    }
+
+    void DispRank()
+    {
+        for (int i = 0; i < rankcnt; i++)
+        {
+            ranktexts[i].text = (rankName[i] + " : " + data.rank[i]);
+        }
+    }
+
+    public void SetRank()
+    {
+        InputField inpfil = GameObject.Find("InputField").GetComponent<InputField>();
+        int score = int.Parse(inpfil.text);
         
+
+
+
+
+        for(int i = 0;i < rankcnt; i++)
+        {
+            if(score > data.rank[i])
+            {
+                var rep = data.rank[i];
+                data.rank[i] = score;
+                score = rep;
+            }
+        }
+    }
+
+
+
+
+    public void DelRank()
+    {
+        for(int i = 0;i < rankcnt; i++)
+        {
+            data.rank[i] = 0;
+        }
     }
 }
