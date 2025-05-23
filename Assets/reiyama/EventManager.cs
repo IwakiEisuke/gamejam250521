@@ -1,6 +1,8 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class EventManager : MonoBehaviour
+public class EventManager : MonoBehaviour, IPointerClickHandler
 {
 
     private bool isButtonPressed = false;
@@ -24,27 +26,58 @@ public class EventManager : MonoBehaviour
         //三秒間だけ表示し、終わったら消える
     }
 
-   
-
-
-
-    void OnMouseDown()
+    private void OnPointerClick(PointerEventData pointerEventData)
     {
         GameManager.Instance.AddTime(5);
-        
-        Destroy(gameObject); 
-       
+
+        Destroy(gameObject);
     }
+
+
+
+   // void OnMouseDown()
+    //{
+        //GameManager.Instance.AddTime(5);
+
+       // Destroy(gameObject);
+
+  //  }
 
     void AutoDisappear()
     {
         if (!isButtonPressed)
         {
             Destroy(gameObject);
-           
+
         }
 
     }
 
+    //private void OnCollisionEnter(Collision collision)
+    //{
+    //    Bullet bullet = collision.gameObject.GetComponent<Bullet>();
 
+    //    if (bullet != null)
+    //    {
+    //        if (GameManager.Instance != null)
+    //        {
+    //            GameManager.Instance.AddTime(5);
+
+    //            Destroy(gameObject);
+    //            Destroy(collision.gameObject);
+
+    //        }
+    //    }
+
+
+    //}
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
     }
+
+    void IPointerClickHandler.OnPointerClick(PointerEventData eventData)
+    {
+        OnPointerClick(eventData);
+    }
+}
