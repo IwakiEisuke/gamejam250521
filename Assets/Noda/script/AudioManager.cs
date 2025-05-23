@@ -21,6 +21,10 @@ public class AudioManager : MonoBehaviour
 
     private List<AudioSource> _seSoureList = new List<AudioSource>();
 
+    public float BgmVolume => _bgmVolume;
+
+    public float SeVolume => _seVolume;
+
     private void Awake()
     {
         if (Instance != null)
@@ -75,7 +79,7 @@ public class AudioManager : MonoBehaviour
     public void SetBGMVolume(float volume)
     {
         _bgmVolume = volume;
-        _bgmAudioSource.volume = volume;
+        _bgmAudioSource.volume = 1f;
     }
 
     public void SetSEVolume(float volume)
