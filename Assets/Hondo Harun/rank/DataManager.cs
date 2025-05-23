@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using System.IO;
-using System.Security.Cryptography.X509Certificates;
+using UnityEngine;
 
 public class DataManager : MonoBehaviour
 {
@@ -10,33 +7,58 @@ public class DataManager : MonoBehaviour
     string filepath;                        //jsonファイルのパス
     string fileName = "Data.json";          //jsonファイル名
 
+    private void Awake()
+    {
+        filepath = Application.dataPath + "/" + fileName;
+
+        //ファイルがないときファイルを作成
+        if (!File.Exists(filepath))
+        {
+            Save(data ??= new SaveData());
+        }
+        data = Load(filepath);
+    }
+
     //jsonとしてデータを保存
     public void Save(SaveData data)
     {
-        //パスを取得
-        filepath = Application.dataPath + "/" + fileName;
-        //ファイルがないときファイルを作成
-        if (File.Exists(filepath))
-        {
-            string json = JsonUtility.ToJson(data);              //jsonとして変換
-            StreamWriter wr = new StreamWriter(filepath, false);  //ファイル書き込み指定
-            wr.WriteLine(json);                                  //json変換した書き込み
-            wr.Close();                                          //ファイルを閉じる
-        }
+        string json = JsonUtility.ToJson(data);              //jsonとして変換
+        StreamWriter wr = new(filepath, false);  //ファイル書き込み指定
+        wr.WriteLine(json);                                  //json変換した書き込み
+        wr.Close();                                          //ファイルを閉じる
     }
 
     //jsonファイルを読み込み
     public SaveData Load(string path)
     {
-        StringReader rd = new StringReader(path);            //ファイル読み込み指定
-        string json = rd.ReadToEnd();                        //ファイル内容すべてよみ込み
-        rd.Close();　　　　　　　　　　　　　　　　　　　　　//ファイル閉じる
+        if (File.Exists(path))
+        {
+            return JsonUtility.FromJson<SaveData>(File.ReadAllText(path));　　　　//jsonファイルを型にもとして返す
+        }
 
-        return JsonUtility.FromJson<SaveData>(json);　　　　//jsonファイルを型にもとして返す
+        data ??= new SaveData();
+
+        return data;
+    }
+
+    public void AddScore(int score)
+    {
+        data = Load(filepath);
+
+        for (int i = 0; i < SaveData.rankCnt; i++)
+        {
+            if (score > data.rank[i])
+            {
+                var rep = data.rank[i];
+                data.rank[i] = score;
+                score = rep;
+            }
+        }
+
+        Save(data);
     }
 }
 
 
 
 
-  

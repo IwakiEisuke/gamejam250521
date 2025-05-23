@@ -81,6 +81,7 @@ public class GameManager : MonoBehaviour
                 {
                     
                     _currentGameState = InGameState.Finish;
+                    FindAnyObjectByType<DataManager>().AddScore(Score);
                 }
                 break;
         }
