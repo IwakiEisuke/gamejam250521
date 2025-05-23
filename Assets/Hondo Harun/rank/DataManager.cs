@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using System.Security.Cryptography.X509Certificates;
 
 public class DataManager : MonoBehaviour
 {
@@ -10,5 +11,45 @@ public class DataManager : MonoBehaviour
     string fileName = "Data.json";          //jsonファイル名
 
 
+        //開始時にファイルチェック、読み込み
+    void Awake()
+    {
+        //パスを取得
+        filepath = Application.dataPath + "/" + fileName;
+        //ファイルがないときファイルを作成
+        if (File.Exists(filepath))
+        {
+            Save(data);
+        }
+        //ファイルを読み込んでdataに格納
+        data = Load(filepath);  
+    }
 
+    //jsonとしてデータを保存
+    void Save(SaveData data)
+    {
+        string json = JsonUtility.ToJson(data);              //jsonとして変換
+        StreamWriter wr = new StreamWriter(filepath,false);  //ファイル書き込み指定
+        wr.WriteLine(json);                                  //json変換した書き込み
+        wr.Close();                                          //ファイルを閉じる
+    }
+    //jsonファイルを読み込み
+    SaveData Load(string path)
+    {
+        StringReader rd = new StringReader(path);            //ファイル読み込み指定
+        string json = rd.ReadToEnd();                        //ファイル内容すべてよみ込み
+        rd.Close();　　　　　　　　　　　　　　　　　　　　　//ファイル閉じる
+
+        return JsonUtility.FromJson<SaveData>(json);　　　　//jsonファイルを型にもとして返す
+    }
+    //ゲーム終了時に保存
+    void OnDestroy()
+    {
+        Save(data);
+    }
 }
+
+
+
+
+  
