@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     [SerializeField, Header("制限時間")]
     private float _limitTime = 30f;
 
+    
+
     [SerializeField,Header("ゲームの進行段階")]
     private　InGameState _currentGameState = InGameState.Start;
 
@@ -81,6 +83,7 @@ public class GameManager : MonoBehaviour
                 {
                     
                     _currentGameState = InGameState.Finish;
+                    FindAnyObjectByType<DataManager>().AddScore(Score);
                 }
                 break;
         }

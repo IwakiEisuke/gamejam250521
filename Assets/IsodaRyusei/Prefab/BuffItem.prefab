@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3873487137920047199}
   - component: {fileID: 1487808839140175613}
+  - component: {fileID: 6408007265440145846}
   - component: {fileID: 1800673984180412946}
   m_Layer: 0
   m_Name: BuffItem
@@ -85,6 +86,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &6408007265440145846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 288862427610088371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ed0dd4dddcf44a46a5bf881a025c4a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _effectTime: 5
+  _effect: 1
 --- !u!135 &1800673984180412946
 SphereCollider:
   m_ObjectHideFlags: 0

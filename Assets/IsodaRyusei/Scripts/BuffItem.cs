@@ -1,30 +1,36 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-
-public class BuffItem : MonoBehaviour
+using UnityEngine.EventSystems;
+public class BuffItem : MonoBehaviour, IPointerClickHandler
 {
-    [SerializeField,Header("ƒXƒRƒA‚Ì‰ÁŽZ’l")]
-    private int BonusScore = 0;
-    [SerializeField,Header("ƒoƒt‚ÌŒp‘±ŽžŠÔ")]
-    private float BuffTime;
-    public GameObject Shooter;
+    [SerializeField, Header("Œø‰ÊŽžŠÔ")]
+    private float _effectTime;
+    [SerializeField, Header("Œø‰Ê”{—¦")]
+    private int _effect;
+    [SerializeField]
+    private float _spawnTime = 3;
 
-    // Start is called before the first frame update
-    void Start()
+    private float _timer;
+
+    private void Start()
     {
-        
+        _timer = 0;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        _timer += Time.deltaTime;
+        if (_timer > _spawnTime) 
+            Destroy(gameObject);
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void OnPointerClick(PointerEventData eventData)
     {
-        
+        GameManager.Instance.Effect(_effectTime, _effect);
+        Destroy(gameObject);
+    }
+
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
     }
 }

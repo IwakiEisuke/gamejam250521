@@ -1,8 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using System.IO;
-using System.Security.Cryptography.X509Certificates;
+using UnityEngine;
 
 public class DataManager : MonoBehaviour
 {
@@ -10,41 +7,54 @@ public class DataManager : MonoBehaviour
     string filepath;                        //jsonファイルのパス
     string fileName = "Data.json";          //jsonファイル名
 
-
-        //開始時にファイルチェック、読み込み
-    void Awake()
+    private void Awake()
     {
-        //パスを取得
         filepath = Application.dataPath + "/" + fileName;
+
         //ファイルがないときファイルを作成
-        if (File.Exists(filepath))
+        if (!File.Exists(filepath))
         {
-            Save(data);
+            Save(data ??= new SaveData());
         }
-        //ファイルを読み込んでdataに格納
-        data = Load(filepath);  
+        data = Load(filepath);
     }
 
     //jsonとしてデータを保存
-    void Save(SaveData data)
+    public void Save(SaveData data)
     {
         string json = JsonUtility.ToJson(data);              //jsonとして変換
-        StreamWriter wr = new StreamWriter(filepath,false);  //ファイル書き込み指定
+        StreamWriter wr = new(filepath, false);  //ファイル書き込み指定
         wr.WriteLine(json);                                  //json変換した書き込み
         wr.Close();                                          //ファイルを閉じる
     }
-    //jsonファイルを読み込み
-    SaveData Load(string path)
-    {
-        StringReader rd = new StringReader(path);            //ファイル読み込み指定
-        string json = rd.ReadToEnd();                        //ファイル内容すべてよみ込み
-        rd.Close();　　　　　　　　　　　　　　　　　　　　　//ファイル閉じる
 
-        return JsonUtility.FromJson<SaveData>(json);　　　　//jsonファイルを型にもとして返す
-    }
-    //ゲーム終了時に保存
-    void OnDestroy()
+    //jsonファイルを読み込み
+    public SaveData Load(string path)
     {
+        if (File.Exists(path))
+        {
+            return JsonUtility.FromJson<SaveData>(File.ReadAllText(path));　　　　//jsonファイルを型にもとして返す
+        }
+
+        data ??= new SaveData();
+
+        return data;
+    }
+
+    public void AddScore(int score)
+    {
+        data = Load(filepath);
+
+        for (int i = 0; i < SaveData.rankCnt; i++)
+        {
+            if (score > data.rank[i])
+            {
+                var rep = data.rank[i];
+                data.rank[i] = score;
+                score = rep;
+            }
+        }
+
         Save(data);
     }
 }
@@ -52,4 +62,3 @@ public class DataManager : MonoBehaviour
 
 
 
-  

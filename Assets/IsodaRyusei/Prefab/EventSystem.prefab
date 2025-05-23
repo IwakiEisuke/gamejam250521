@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &226572866719556363
+--- !u!1 &5429877817345553348
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,57 +8,63 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4393743136531787505}
-  - component: {fileID: 2548877582935328307}
-  - component: {fileID: 5469953892313546687}
+  - component: {fileID: 2418656211127258607}
+  - component: {fileID: 8621973952384717571}
+  - component: {fileID: 4711007153944499965}
   m_Layer: 0
-  m_Name: AudioManager 1
+  m_Name: EventSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4393743136531787505
+--- !u!4 &2418656211127258607
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 226572866719556363}
+  m_GameObject: {fileID: 5429877817345553348}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.2738967, y: 0.5684748, z: 0}
+  m_LocalPosition: {x: -3.7724924, y: -4.3630767, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2548877582935328307
+--- !u!114 &8621973952384717571
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 226572866719556363}
+  m_GameObject: {fileID: 5429877817345553348}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4449d5a7f1aeb64981b16f4a291956d, type: 3}
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bgmAudioSource: {fileID: 5650276452134125729, guid: ad4d13dd1bf8a1e418c20018151852ec, type: 3}
-  _seAudioSource: {fileID: 5650276452134125729, guid: dff3f9664d016f742b7245f83cd0791b, type: 3}
---- !u!114 &5469953892313546687
+  m_FirstSelected: {fileID: 0}
+  m_sendNavigationEvents: 1
+  m_DragThreshold: 10
+--- !u!114 &4711007153944499965
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 226572866719556363}
+  m_GameObject: {fileID: 5429877817345553348}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7e491c0ff31a964b9f38126448b66a2, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioClip1: {fileID: 8300000, guid: 5fa96a142a4e59946b62679b00be6203, type: 3}
-  audioClip2: {fileID: 8300000, guid: 1484f3717e83c2d458e0de657d108276, type: 3}
-  audioClip3: {fileID: 8300000, guid: 1484f3717e83c2d458e0de657d108276, type: 3}
+  m_SendPointerHoverToParent: 1
+  m_HorizontalAxis: Horizontal
+  m_VerticalAxis: Vertical
+  m_SubmitButton: Submit
+  m_CancelButton: Cancel
+  m_InputActionsPerSecond: 10
+  m_RepeatDelay: 0.5
+  m_ForceModuleActive: 0
