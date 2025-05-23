@@ -50,3 +50,5 @@ MonoBehaviour:
   _targetList: []
   _cameraObject: {fileID: 0}
   _spawnInterval: 3
+  _scoreBuffMagnification: 1
+  _buffObject: {fileID: 5030622765117525879, guid: 91884df9dd00d3b499392c3b93c2c0a1, type: 3}

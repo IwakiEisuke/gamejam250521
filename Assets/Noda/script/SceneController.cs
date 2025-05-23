@@ -9,7 +9,7 @@ public class SceneController : MonoBehaviour
     /// <summary>
     ///シングルトン化
     /// </summary>
-    static SceneController _instance = new SceneController();
+    static SceneController _instance;
     public static SceneController Instance => _instance;
 
     private void Awake()
