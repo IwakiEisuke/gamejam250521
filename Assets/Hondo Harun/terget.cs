@@ -33,8 +33,9 @@ public class terget : MonoBehaviour
         // 物理更新サイクルでは Time.deltaTime が fixedTime に置き換えられる
         var vacuum = Time.deltaTime / vacuumDuration; 
         var getSmall = transform.localScale -= Vector3.one * vacuum;
+        Debug.Log(getSmall.x);
         //的の大きさ（X値）がゼロ以下になると・・・・
-        if (getSmall.x <= 0)
+        if (getSmall.x <= .02f)
         {
             //的が消滅するとスコアが加算される
             GameManager.Instance.ScorePlus(destroyPoint);
