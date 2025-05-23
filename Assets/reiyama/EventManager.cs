@@ -8,9 +8,10 @@ public class EventManager : MonoBehaviour, IPointerClickHandler
     private bool isButtonPressed = false;
     [SerializeField]
     private float _spawnTime = 3;
+    [SerializeField] float addTime = 3;
     private float _timer;
 
-
+    [SerializeField] AudioClip _clip;
 
 
     // Start is called before the first frame update
@@ -41,8 +42,8 @@ public class EventManager : MonoBehaviour, IPointerClickHandler
 
     private void OnPointerClick(PointerEventData pointerEventData)
     {
-        GameManager.Instance.AddTime(5);
-
+        GameManager.Instance.AddTime(addTime);
+        if (_clip) AudioManager.Instance.PlaySE(_clip);
         Destroy(gameObject);
     }
 

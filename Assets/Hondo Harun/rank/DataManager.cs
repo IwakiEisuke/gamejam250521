@@ -57,8 +57,9 @@ public class DataManager : MonoBehaviour
 
         Save(data);
     }
+
+    public void ResetRank()
+    {
+        
+    }
 }
-
-
-
-

@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 3.56, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -46,9 +46,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 673b3ab0ec381f042a057d38de0ace25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vacuumDuration: 1.5
+  vacuumDuration: 0.8
   destroyPoint: 100
   point: 1
+  destroyAudio: {fileID: 8300000, guid: c3de7d7dfbf3e7f4cb98bb65ced54f1d, type: 3}
+  vacuumAudio: {fileID: 8300000, guid: daefbfab563d2984bb1803522b7c4b84, type: 3}
+  seDuration: 0.3
 --- !u!212 &367345658687194190
 SpriteRenderer:
   m_ObjectHideFlags: 0

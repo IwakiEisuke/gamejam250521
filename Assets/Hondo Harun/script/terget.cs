@@ -1,12 +1,18 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using Unity.VisualScripting;
+using UnityEngine;
 
 public class terget : MonoBehaviour
 {
     [SerializeField] float vacuumDuration = 1;
     [SerializeField] int destroyPoint = 10;
     [SerializeField] int point = 1;
+    [SerializeField] AudioClip destroyAudio;
+    [SerializeField] AudioClip vacuumAudio;
+    [SerializeField] float seDuration = 0.3f;
 
     bool isHitFrame;
+    Coroutine c;
 
     void Update()
     {
@@ -35,16 +41,21 @@ public class terget : MonoBehaviour
         var getSmall = transform.localScale -= Vector3.one * vacuum;
         Debug.Log(getSmall.x);
         //的の大きさ（X値）がゼロ以下になると・・・・
-        if (getSmall.x <= .02f)
+        if (getSmall.x <= .05f)
         {
             //的が消滅するとスコアが加算される
             GameManager.Instance.ScorePlus(destroyPoint);
             Debug.Log("スコアが" + destroyPoint + "上がった");
+            if (destroyAudio) AudioManager.Instance.PlaySE(destroyAudio);
             //的のスケールが0以下になったら消滅する
             Destroy(this.gameObject);
         }
         //的が縮小している間スコアがかさんされる
         GameManager.Instance.ScorePlus(point);
+        if (c != null)
+        {
+            c = StartCoroutine(PlaySE());
+        }
         Debug.Log("スコアが" + point + "上がった");
     }
 
@@ -52,5 +63,12 @@ public class terget : MonoBehaviour
     {
         Debug.Log("destroy");
         Destroy(this.gameObject);
+    }
+
+    private IEnumerator PlaySE()
+    {
+        if (vacuumAudio) AudioManager.Instance.PlaySE(vacuumAudio);
+        yield return new WaitForSeconds(seDuration);
+        c = null;
     }
 }

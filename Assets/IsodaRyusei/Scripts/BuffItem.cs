@@ -8,6 +8,7 @@ public class BuffItem : MonoBehaviour, IPointerClickHandler
     private int _effect;
     [SerializeField]
     private float _spawnTime = 3;
+    [SerializeField] AudioClip _clip;
 
     private float _timer;
 
@@ -26,6 +27,7 @@ public class BuffItem : MonoBehaviour, IPointerClickHandler
     public void OnPointerClick(PointerEventData eventData)
     {
         GameManager.Instance.Effect(_effectTime, _effect);
+        if (_clip) AudioManager.Instance.PlaySE(_clip);
         Destroy(gameObject);
     }
 
