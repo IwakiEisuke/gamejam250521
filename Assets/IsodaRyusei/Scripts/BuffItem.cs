@@ -1,30 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.SocialPlatforms.Impl;
-
-public class BuffItem : MonoBehaviour
+using UnityEngine.EventSystems;
+public class BuffItem : MonoBehaviour, IPointerClickHandler
 {
     [SerializeField, Header("Œø‰ÊŽžŠÔ")]
     private float _effectTime;
     [SerializeField, Header("Œø‰Ê”{—¦")]
     private int _effect;
 
-    private void OnCollisionEnter(Collision collision)
+    public void OnPointerClick(PointerEventData eventData)
     {
-        Bullet bullet = collision.gameObject.GetComponent<Bullet>();
-        if (bullet != null)
-        {
-            if (GameManager.Instance != null)
-            {
-                GameManager.Instance.Effect(_effectTime,_effect);
-            }
-
-            Destroy(collision.gameObject);
-            Destroy(gameObject);
-        }
+        GameManager.Instance.Effect(_effectTime, _effect);
+        Destroy(gameObject);
     }
-    
+
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
 }
