@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEngine.RuleTile.TilingRuleOutput;
 
 public class RankingCrass : MonoBehaviour
 {
@@ -16,9 +15,11 @@ public class RankingCrass : MonoBehaviour
     {
         data = GetComponent<DataManager>().data;
 
-        for (int i = 0; i < rankcnt; i++) {
-            Transform rankChilds = GameObject.Find("RankTexts").transform;
-            ranktexts[i]
+        for (int i = 0; i < rankcnt; i++)
+        {
+            Transform rankChilds = GameObject.Find("RankTexts").transform.GetChild(i);
+            ranktexts[i] = rankChilds.GetComponent<Text>();
+        }
     }
 
     // Update is called once per frame
